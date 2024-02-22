@@ -37,14 +37,52 @@
 	</dependencies>
 
 	<build>
-		<sourceDirectory>domain/src/main/java</sourceDirectory>
-		<testSourceDirectory>domain/src/test/java</testSourceDirectory>
+		<!-- <sourceDirectory>domain/src/main/java</sourceDirectory>
+		<testSourceDirectory>domain/src/test/java</testSourceDirectory> -->
 
 
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
+
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>domain/src/main/java</source>
+								<source>application/src/main/java</source>
+								<source>infrastructure/src/main/java</source>
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>add-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>domain/src/test/java</source>
+								<source>application/src/test/java</source>
+								<source>infrastructure/src/test/java</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
