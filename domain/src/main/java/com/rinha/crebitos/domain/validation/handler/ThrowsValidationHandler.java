@@ -1,4 +1,4 @@
-package com.rinha.crebitos.domain.validation;
+package com.rinha.crebitos.domain.validation.handler;
 
 import com.rinha.crebitos.domain.exceptions.DomainException;
 import com.rinha.crebitos.domain.validation.Error;

@@ -2,7 +2,7 @@ package com.rinha.crebitos.domain.transaction;
 
 import com.rinha.crebitos.domain.UnitTest;
 import com.rinha.crebitos.domain.exceptions.DomainException;
-import com.rinha.crebitos.domain.validation.ThrowsValidationHandler;
+import com.rinha.crebitos.domain.validation.handler.ThrowsValidationHandler;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -126,7 +126,7 @@ class TransactionTest extends UnitTest {
   void givenAnInvalidLongerDescription_whenCallNewTransactionAndValidate_thenShouldReceiveError() {
     final var expectedValue = 1000;
     final var expectedType = "c";
-    final var expectedDescription = "descriptiondescription";
+    final var expectedDescription = "description description";
     final var expectedErrorMessage = "'description' must be between 1 and 10 characters";
     final var expectedErrorCount = 1;
 
