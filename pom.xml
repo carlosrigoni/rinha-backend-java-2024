@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version>
+		<version>3.2.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rinha</groupId>
@@ -62,9 +62,9 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>domain/src/main/java</source>
-								<source>application/src/main/java</source>
-								<source>infrastructure/src/main/java</source>
+								<source>domain/main/java</source>
+								<source>application/main/java</source>
+								<source>infrastructure/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -76,9 +76,9 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>domain/src/test/java</source>
-								<source>application/src/test/java</source>
-								<source>infrastructure/src/test/java</source>
+								<source>domain/test/java</source>
+								<source>application/test/java</source>
+								<source>infrastructure/test/java</source>
 							</sources>
 						</configuration>
 					</execution>
