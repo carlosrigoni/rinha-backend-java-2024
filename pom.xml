@@ -34,11 +34,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>io.vavr</groupId>
+			<artifactId>vavr</artifactId>
+			<version>0.10.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<!-- <sourceDirectory>domain/src/main/java</sourceDirectory>
-		<testSourceDirectory>domain/src/test/java</testSourceDirectory> -->
 
 
 		<plugins>

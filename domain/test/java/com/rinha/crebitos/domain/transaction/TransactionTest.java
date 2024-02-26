@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Assertions;
 class TransactionTest extends UnitTest {
   @Test
   void givenAValidParams_whenCallNewTransaction_thenInstantiateATransaction() {
-    final var expectedValue = 1000;
+    final var expectedValue = 10000;
     final var expectedType = "c";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
 
     final var actualTransaction = Transaction.newTransaction(expectedValue, expectedType, expectedDescription);
 
@@ -27,7 +27,7 @@ class TransactionTest extends UnitTest {
   void givenAValidParams_whenCallNewTransaction_thenInstantiateATransactionWithDifferentIds() {
     final var expectedValue = 1000;
     final var expectedType = "c";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
 
     final var actualTransaction1 = Transaction.newTransaction(expectedValue, expectedType, expectedDescription);
     final var actualTransaction2 = Transaction.newTransaction(expectedValue, expectedType, expectedDescription);
@@ -38,7 +38,7 @@ class TransactionTest extends UnitTest {
   @Test
   void givenAValidParams_whenCallNewTransaction_thenInstantiateATransactionWithDifferentValues() {
     final var expectedType = "c";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
 
     final var actualTransaction1 = Transaction.newTransaction(1000, expectedType, expectedDescription);
     final var actualTransaction2 = Transaction.newTransaction(2000, expectedType, expectedDescription);
@@ -49,7 +49,7 @@ class TransactionTest extends UnitTest {
   @Test
   void givenAValidParams_whenCallNewTransaction_thenInstantiateATransactionWithDifferentTypes() {
     final var expectedValue = 1000;
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
 
     final var actualTransaction1 = Transaction.newTransaction(expectedValue, "c", expectedDescription);
     final var actualTransaction2 = Transaction.newTransaction(expectedValue, "d", expectedDescription);
@@ -62,8 +62,8 @@ class TransactionTest extends UnitTest {
     final var expectedValue = 1000;
     final var expectedType = "c";
 
-    final var actualTransaction1 = Transaction.newTransaction(expectedValue, expectedType, "description1");
-    final var actualTransaction2 = Transaction.newTransaction(expectedValue, expectedType, "description2");
+    final var actualTransaction1 = Transaction.newTransaction(expectedValue, expectedType, "test1");
+    final var actualTransaction2 = Transaction.newTransaction(expectedValue, expectedType, "test2");
 
     Assertions.assertNotEquals(actualTransaction1.getDescription(), actualTransaction2.getDescription());
   }
@@ -72,7 +72,7 @@ class TransactionTest extends UnitTest {
   void givenAnInvalidType_whenCallNewTransactionAndValidate_thenShouldReceiveError() {
     final var expectedValue = 1000;
     final var expectedType = "invalid";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
     final var expectedErrorMessage = "'type' must be 'c' or 'd'";
     final var expectedErrorCount = 1;
 
@@ -91,7 +91,7 @@ class TransactionTest extends UnitTest {
       throws DomainException {
     final var expectedValue = 1000;
     final String expectedType = null;
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
     final var expectedErrorMessage = "'type' should not be null";
     final var expectedErrorCount = 1;
 
@@ -109,7 +109,7 @@ class TransactionTest extends UnitTest {
       throws DomainException {
     final var expectedValue = 1000;
     final var expectedType = " ";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
     final var expectedErrorMessage = "'type' should not be empty";
     final var expectedErrorCount = 1;
 
@@ -126,7 +126,7 @@ class TransactionTest extends UnitTest {
   void givenAnInvalidLongerDescription_whenCallNewTransactionAndValidate_thenShouldReceiveError() {
     final var expectedValue = 1000;
     final var expectedType = "c";
-    final var expectedDescription = "description description";
+    final var expectedDescription = "description";
     final var expectedErrorMessage = "'description' must be between 1 and 10 characters";
     final var expectedErrorCount = 1;
 
@@ -194,11 +194,11 @@ class TransactionTest extends UnitTest {
   void givenAValidParams_whenCallUpdate_thenShouldUpdateTransaction() {
     final var expectedValue = 1000;
     final var expectedType = "c";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
     final var actualTransaction = Transaction.newTransaction(expectedValue, expectedType, expectedDescription);
     final var expectedNewValue = 2000;
     final var expectedNewType = "d";
-    final var expectedNewDescription = "new description";
+    final var expectedNewDescription = "new test";
 
     final var actualUpdatedTransaction = actualTransaction.update(expectedNewValue, expectedNewType,
         expectedNewDescription);
@@ -212,11 +212,11 @@ class TransactionTest extends UnitTest {
   void givenAValidTransaction_whenCallUpdateWithInvalidParams_thenReturnTransactionUpdated() {
     final var expectedValue = 1000;
     final var expectedType = "c";
-    final var expectedDescription = "description";
+    final var expectedDescription = "test";
     final var actualTransaction = Transaction.newTransaction(expectedValue, expectedType, expectedDescription);
     final var expectedNewValue = 2000;
     final var expectedNewType = "d";
-    final var expectedNewDescription = "new description";
+    final var expectedNewDescription = "new test";
 
     final var actualUpdatedTransaction = actualTransaction.update(expectedNewValue, expectedNewType,
         expectedNewDescription);
