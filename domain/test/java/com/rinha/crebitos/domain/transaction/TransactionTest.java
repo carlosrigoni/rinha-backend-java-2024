@@ -21,6 +21,7 @@ class TransactionTest extends UnitTest {
     Assertions.assertEquals(expectedValue, actualTransaction.getValue());
     Assertions.assertEquals(expectedType, actualTransaction.getType());
     Assertions.assertEquals(expectedDescription, actualTransaction.getDescription());
+    Assertions.assertNotNull(actualTransaction.getCreatedAt());
   }
 
   @Test
